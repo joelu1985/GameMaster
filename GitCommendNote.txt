@@ -1,0 +1,52 @@
+WINDOWS作業系統
+命令提示字元視窗下
+
+20211219
+進入複製遠端repository的資料夾輸入指令:
+
+C:\Users\admin\Documents>git clone https://github.com/joelu1985/GameMaster.git
+Cloning into 'GameMaster'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 2 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+進入GameMaster資料夾
+C:\Users\admin\Documents>cd GameMaster
+
+增加遠端位址及名稱
+git remote add GameMaster https://github.com/joelu1985/GameMaster.git
+
+查看遠端詳細資料
+C:\Users\admin\Documents\GameMaster>git remote -v
+GameMaster      https://github.com/joelu1985/GameMaster.git (fetch)
+GameMaster      https://github.com/joelu1985/GameMaster.git (push)
+
+追蹤所有新增檔案
+C:\Users\admin\Documents\GameMaster>git add .
+
+開啟預設編輯器 編輯commit
+C:\Users\admin\Documents\GameMaster>git commit
+hint: Waiting for your editor to close the file... unix2dos: converting file C:/Users/admin/Documents/GameMaster/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file C:/Users/admin/Documents/GameMaster/.git/COMMIT_EDITMSG to Unix format...
+[main a8861b8] +CommitMessageSample.txt Describe how to write a commit well
+ 1 file changed, 189 insertions(+)
+ create mode 100644 CommitMessageSample.txt
+
+在遠端數據庫建立分支/push修改，未指定分支名稱，遠端數據庫和本地端數據庫所存有的分支在預設裡會被列為目標。
+C:\Users\admin\Documents\GameMaster>git push GameMaster
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 4.19 KiB | 2.09 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/joelu1985/GameMaster.git
+   999047e..a8861b8  main -> main
+
+在遠端數據庫建立分支/push修改內容到指定分支
+C:\Users\admin\Documents\GameMaster>git push GameMaster main
+Everything up-to-date
+
+
